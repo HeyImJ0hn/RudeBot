@@ -30,15 +30,11 @@ def store_last_seen_id(last_seen_id, file_name):
 def get_insults(file_name):
     f = open(file_name, 'r')
     insults = f.read().split('\n')
-    f.close()
     return insults
 
 def pick_insult():
     insults = get_insults('insults.txt')
-
-    rnd = random.randint(0, len(insults)-1)
-    insult = insults[rnd]
-
+    insult = random.choice(insults)
     return insult
 
 def reply():
